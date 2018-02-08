@@ -1,0 +1,45 @@
+body {
+    z-index: 0;
+    color: red;
+    background-image: url(../images/spacebackground.jpeg);
+}
+
+.header1 { 
+    width: 100%;
+    height: 200px;
+    z-index: 1000;
+    background-image: url(../images/crypto-coins.png);
+}
+
+.background {
+    
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    background-color: 
+}
+
+.picture {
+    padding: 5px;
+    background-color: transparent;
+    text-align: center;
+    height: auto;
+    z-index: 1000;
+    border: double;
+    border-color: red;
+}
+
+.game {
+    padding: 5px;
+    background-color: transparent;
+    text-align: center;
+    height: auto;
+    z-index: 1000;
+    border: double;
+    border-color: red;
+}
