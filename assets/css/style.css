@@ -1,6 +1,6 @@
 body {
     z-index: 0;
-    color: red;
+    color: white;
     background-image: url(../images/spacebackground.jpeg);
 }
 
@@ -26,20 +26,28 @@ h1 {
 
 .picture {
     padding: 5px;
-    background-color: transparent;
-    text-align: center;
-    height: auto;
-    z-index: 1000;
+    background-image: url(../images/matrix.jpeg);
+    height: 500px;
+    z-index: 10000;
     border: double;
-    border-color: red;
+    border-color: white;
+
 }
 
 .game {
     padding: 5px;
     background-color: transparent;
     text-align: center;
-    height: auto;
+    height: 500px;
     z-index: 1000;
     border: double;
-    border-color: red;
+    border-color: white;
+}
+
+#about {
+    font-family: Papyrus, fantasy;
+    font-weight: bolder;
+    line-height: 20px;
+    font-size: 130%;
+
 }

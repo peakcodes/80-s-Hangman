@@ -2,20 +2,21 @@
 
     var wins ; // totals wins
     var word ; // Selected Word
-    var guessAll = []; // Guess
-    var wrongguesses = []; // Stored Guesses
+    var guessAll ; // Guesses
+    var wGuesses = []; // Stored Guesses
     var lives = 10;
-
+    var userLetter ;
+    var remainingLetters;
     // // // Elements
     // // var showWins = document.getElementById("myWins");
     // var showLives = document.getElementById("showLives");
 
-var lettersGuessedElement = document.getElementById('guessAll')
+var lettersGuessedElement = document.getElementById('userLetter')
  
  // Create an array of words
 
  var words = ['bitcoin', 'litecoin', 'ethereum', 'ripple', 'stellar', 'factom', 'doge', 'dash', 'monero'];
-
+ var images = [];
  // Pick a random word
 
  var word = words[Math.floor(Math.random() * words.length)];
@@ -26,47 +27,43 @@ var lettersGuessedElement = document.getElementById('guessAll')
 
  var answerArray = [];
  for (var i = 0; i < word.length; i++) {
- answerArray[i] = " _ ";
+ answerArray.push("_");
+ console.log(answerArray)
  }
- var id = answerArray.join ("  ")
+ var id = answerArray.join(" ");
  var remainingLetters = word.length;
 
- document.getElementById("word").innerHTML = id;
 
+ document.onkeyup = function (event) {
+    userLetter = event.key;
+    userGuess(userLetter);
+    console.log(userLetter)}
 
-// Show lives
+function userGuess (userLetter) {
+
+    if(word.indexOf(userLetter) > -1) {
+
+  for (var j = 0; j < answerArray.length; j++) {
+    if (userLetter === answerArray[j]) {
+      answerArray[j] = userLetter;
+      console.log(answerArray);
+    }
+    }
+    }
+    }
+    document.getElementById("word").innerHTML = answerArray;
+
+//Show lives
     comment = function () {
-    showLives.innerHTML = "You have " + lives + " lives";
-    if (lives < 1) {
-      showLives.innerHTML = "Game Over";
-    }
-    for (var i = 0; i < guessAll.length; i++) {
-      if (id === guessAll.length) {
-        showLives.innerHTML = "You Win!";
-      }}
-    }
-    comment();
-}
-
-//  Apply Guess/keystroke
-
-document.onkeyup = function (event) {
-var guessAll = event.key;
-console.log(guessAll);
-}
-
-function userGuess (guessAll) {
-
-if(word.indexOf(guessAll) > -1) {
-
-  for (var j = 0; j < word.length; j++) {
-    if (word[j] === guessAll) {
-      answerArray[j] = word;
-    }
-  }
-  
-
-}
-
-
-}
+        showLives.innerHTML = "You have " + lives + " lives";
+        if (lives < 1) {
+            showLives.innerHTML = "Game Over";
+        }
+        for (var i = 0; i < guessAll.length; i++) {
+            if (id === guessAll.length) {
+                showLives.innerHTML = "You Win!";
+            }
+//  newDiv.setattribute('bitcoin', "../images/bitcoin.png")
+//  // newDiv.setattribute('doge', "image.png")
+// // newDiv.setattribute('etheruem', "image.png")
+// // newDiv.setattribute('litecoin', "image.png")

@@ -1,7 +1,8 @@
 window.onload = function () {
 
-  var wins; // totals wins
-  var word; // Selected Word
+  var totalWs; // totals wins
+  var word;
+  var winning = word; // Selected Word
   var guessAll; // Guesses
   var wGuesses; // Stored Guesses
   var lives = 10;
@@ -59,7 +60,7 @@ window.onload = function () {
         }
       }
       guessArray.push(userLetter);
-      document.getElementById("wguess").innerHTML = guessArray.join(" ");
+      document.getElementById("wGuess").innerHTML = guessArray.join(" ");
 
     }
   }
@@ -69,6 +70,15 @@ window.onload = function () {
   //   wguess
   // }
 
+  // if word is complete then do this, is user guess too many times then resert gamer
+  comment = function () {
+    if (word === answerArray) {
+      alert("You Win");
+    }
+    }
+  }
+
+// dont let user lose life for same incorrect letter
   //Show lives
   comment = function () {
     showLives.innerHTML = "You have " + lives + " lives";
@@ -82,10 +92,17 @@ window.onload = function () {
       }
     }
   }
-  comment();
-}
+  comment ();
 
-// if word is complete then do this, is user guess too many times then resert gamer
+  // Insert total wins 
 
 
-// dont let user lose life for same incorrect letter
+    comment = function () {
+    showWins.innerhtml = "Total Wins "+ wins;
+      if (success) {
+        wins.innerhtml = wins++;
+      }
+      
+// html is total w - need to call wins from game loop determination. If game loop is successful, add win
+    
+  }
