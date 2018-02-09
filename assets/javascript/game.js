@@ -15,6 +15,8 @@ window.onload = function () {
 
   var lettersGuessedElement = document.getElementById('userLetter')
 
+  //trying to only allow letters to be entered. No numbers or actions
+
   // Create an array of words
 
   var words = ['bitcoin', 'litecoin', 'ethereum', 'ripple', 'stellar', 'factom', 'doge', 'dash', 'monero'];
@@ -38,6 +40,7 @@ window.onload = function () {
     document.getElementById("word").innerHTML = answerArray;
     var id = answerArray.join("  ");
     // var remainingLetters = word.length;
+    // could not get this array to spead out like guesses. I had this set up working prior but could not fix it after i broke it
   }
 
   document.onkeyup = function (event) {
@@ -62,13 +65,9 @@ window.onload = function () {
       guessArray.push(userLetter);
       document.getElementById("wGuess").innerHTML = guessArray.join(" ");
 
+
     }
   }
-
-  // // Show guesses
-  // comment = function () {
-  //   wguess
-  // }
 
   // if word is complete then do this, is user guess too many times then resert gamer
   comment = function () {
@@ -77,6 +76,8 @@ window.onload = function () {
     }
     }
   }
+//could not complete loop
+  
 
 // dont let user lose life for same incorrect letter
   //Show lives
@@ -94,6 +95,8 @@ window.onload = function () {
   }
   comment ();
 
+  //could not get lives to show up again after i was able to configure the random word array
+
   // Insert total wins 
 
 
@@ -102,6 +105,8 @@ window.onload = function () {
       if (success) {
         wins.innerhtml = wins++;
       }
+
+      //could not complete this argument
       
 // html is total w - need to call wins from game loop determination. If game loop is successful, add win
     
